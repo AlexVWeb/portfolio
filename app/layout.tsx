@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ThemeProvider } from "@/components/theme-provider";
+import ThemeSwitchIcon from "@/components/ThemeSwitchIcon";
+import ThemeTransition from "@/components/ThemeTransition";
+import { LanguageProvider } from "@/components/contexts/LanguageContext";
+import LanguageSwitch from "@/components/LanguageSwitch";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +17,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LanguageProvider>
+            <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+              <LanguageSwitch />
+              <ThemeSwitchIcon />
+            </div>
+            <ThemeTransition>
+              {children}
+            </ThemeTransition>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
