@@ -30,6 +30,9 @@ export const translations = {
             email: "Email",
             message: "Message",
             send: "Send message",
+            sending: "Sending...",
+            success: "Message sent successfully! I'll get back to you soon.",
+            error: "An error occurred while sending the message. Please try again later.",
         },
     },
     fr: {
@@ -61,6 +64,9 @@ export const translations = {
             email: "Email",
             message: "Message",
             send: "Envoyer le message",
+            sending: "Envoi en cours...",
+            success: "Message envoyé avec succès ! Je vous répondrai bientôt.",
+            error: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.",
         },
     },
 };

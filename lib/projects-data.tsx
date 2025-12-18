@@ -1,10 +1,6 @@
 import {
     FaReact,
-    FaAws,
-    FaDocker,
     FaNodeJs,
-    FaGithub,
-    FaPython,
 } from "react-icons/fa";
 import {
     SiNextdotjs,
@@ -16,7 +12,8 @@ import {
     SiSass,
     SiPhp,
     SiMysql,
-    SiDocker
+    SiDocker,
+    SiGithub
 } from "react-icons/si";
 
 const defaultStack = [

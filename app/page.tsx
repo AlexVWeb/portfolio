@@ -1,6 +1,5 @@
 "use client"
 
-import { LetterPullUpText } from "@/components/ui/letter-pull-up-text"
 import { Hero } from "@/components/Hero"
 import { Projects } from "@/components/Projects"
 import { Contact } from "@/components/Contact"
